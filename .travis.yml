@@ -35,8 +35,9 @@ after_script:
 - 'curl -m 120 -H ''Max-Days: 3'' --upload-file ./${image_name}.7z https://transfer.sh/${image_name}.7z ; echo'
 env:
   jobs:
-  - build_variant=mt7621-1 targets="K2P-5.0"
-  - build_variant=mt7621-2 targets="NEWIFI3 RM2100"
+  - build_variant=stage-1 targets="K2P-5.0"
+  - build_variant=stage-2 targets="NEWIFI3"
+  - build_variant=stage-3 targets="RM2100"
   global:
   - toolchain_url="https://github.com/Lawlietr/padavan-toolchain/releases/download/v1.1_fork/mipsel-linux-uclibc.tar.xz"
 git:
